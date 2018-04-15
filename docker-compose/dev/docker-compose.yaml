@@ -1,0 +1,28 @@
+version: "3.6"
+
+services:
+
+  redis:
+
+    build:
+      context: ../../
+      dockerfile: docker/redis/Dockerfile
+
+    image: gerold/tutorial_redis:dev
+
+    volumes:
+      - ../../_local_data/redis:/data
+
+  flaskapp:
+
+    build:
+      context: ../../
+      dockerfile: docker/flaskapp/Dockerfile
+
+    image: gerold/tutorial_flaskapp:dev
+
+    environment:
+      PRODUCTION: "false"
+
+    ports:
+      - 5000:5000
