@@ -8,11 +8,6 @@ services:
 
     restart: "unless-stopped"
 
-    logging:
-      driver: journald
-      options:
-        tag: "{{.Name}} "
-
     volumes:
       - ./data/redis:/data
 
@@ -22,11 +17,6 @@ services:
     image: gerold/tutorial_flaskapp:dev
 
     restart: "unless-stopped"
-
-    logging:
-      driver: journald
-      options:
-        tag: "{{.Name}} "
 
     depends_on:
       - redis
@@ -40,11 +30,6 @@ services:
     image: gerold/tutorial_nginx:dev
 
     restart: "unless-stopped"
-
-    logging:
-      driver: journald
-      options:
-        tag: "{{.Name}} "
 
     depends_on:
       - flaskapp

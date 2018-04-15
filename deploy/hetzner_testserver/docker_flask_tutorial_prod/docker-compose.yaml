@@ -1,0 +1,57 @@
+version: "3.6"
+
+services:
+
+  redis:
+
+    image: gerold/tutorial_redis:prod
+
+    restart: "unless-stopped"
+
+    logging:
+      driver: journald
+      options:
+        tag: "{{.Name}} "
+
+    volumes:
+      - ./data/redis:/data
+
+
+  flaskapp:
+
+    image: gerold/tutorial_flaskapp:prod
+
+    restart: "unless-stopped"
+
+    logging:
+      driver: journald
+      options:
+        tag: "{{.Name}} "
+
+    depends_on:
+      - redis
+
+    environment:
+      PRODUCTION: "true"
+
+
+  nginx:
+
+    image: gerold/tutorial_nginx:prod
+
+    restart: "unless-stopped"
+
+    logging:
+      driver: journald
+      options:
+        tag: "{{.Name}} "
+
+    depends_on:
+      - flaskapp
+
+    environment:
+      PRODUCTION: "true"
+
+    ports:
+      - 8080:8080
+
