@@ -26,7 +26,7 @@ services:
       - redis
 
     environment:
-      PRODUCTION: "false"
+      PRODUCTION: "true"
 
     volumes:
       - ../../application:/application
@@ -44,7 +44,7 @@ services:
       - flaskapp
 
     environment:
-      PRODUCTION: "false"
+      PRODUCTION: "true"
 
     volumes:
       - ../../application:/usr/share/nginx/html:ro
