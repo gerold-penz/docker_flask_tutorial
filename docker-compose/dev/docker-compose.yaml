@@ -4,25 +4,50 @@ services:
 
   redis:
 
+    image: gerold/tutorial_redis:dev
+
     build:
       context: ../../
       dockerfile: docker/redis/Dockerfile
 
-    image: gerold/tutorial_redis:dev
-
     volumes:
       - ../../_local_data/redis:/data
 
+
   flaskapp:
+
+    image: gerold/tutorial_flaskapp:dev
 
     build:
       context: ../../
       dockerfile: docker/flaskapp/Dockerfile
 
-    image: gerold/tutorial_flaskapp:dev
+    depends_on:
+      -redis
 
     environment:
       PRODUCTION: "false"
 
+    volumes:
+      - ../../application:/application
+
+
+  nginx:
+
+    image: gerold/tutorial_nginx:dev
+
+    build:
+      context: ../../
+      dockerfile: docker/nginx/Dockerfile
+
+    depends_on:
+      - flaskapp
+
+    environment:
+      PRODUCTION: "false"
+
+    volumes:
+      - ../../application:/usr/share/nginx/html:ro
+
     ports:
-      - 5000:5000
+      - 8080:8080
