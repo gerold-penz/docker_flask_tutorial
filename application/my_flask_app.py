@@ -16,7 +16,13 @@ rdb = redis.StrictRedis(host = 'redis')
 @app.route("/")
 def index():
     my_counter = rdb.incr("my_counter")
-    return "Hallo Welt {}".format(my_counter)
+    
+    if os.environ.get("PRODUCTION") == "true":
+        retval = "Production: {}".format(my_counter)
+    else:
+        retval = "Development: {}".format(my_counter)
+
+    return retval
 
 
 def main():
