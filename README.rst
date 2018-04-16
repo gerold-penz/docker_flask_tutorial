@@ -105,6 +105,17 @@ https://hub.docker.com/
 - ...
 
 
+------------------
+.dockerignore-File
+------------------
+
+Verhindert das Kopieren der Ordner und Dateien die in dieser Datei aufgelistet sind.
+Beim Erstellen eines Docker-Images kopiert Docker alles im "Build-Context" in einen temporären Ordner.
+Erst danach wird das Image erstellt.
+
+Siehe: https://docs.docker.com/engine/reference/commandline/build/#extended-description
+
+
 ====================================================
 Änderungen im Dateisystem eines laufenden Containers
 ====================================================

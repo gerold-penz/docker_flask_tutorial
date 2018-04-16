@@ -1,2 +1,4 @@
 /_local_data
 /_local_images
+/deploy
+/docker-compose
