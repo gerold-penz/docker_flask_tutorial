@@ -158,3 +158,23 @@ About images, containers, and storage drivers
 
 https://docs.docker.com/v17.09/engine/userguide/storagedriver/imagesandcontainers/
 
+
+--------------
+Ordnerstruktur
+--------------
+
+::
+
+    ├── application
+    ├── deploy
+    │   └── hetzner_testserver
+    │       ├── docker_flask_tutorial_dev
+    │       └── docker_flask_tutorial_prod
+    ├── docker
+    │   ├── flaskapp
+    │   ├── nginx
+    │   └── redis
+    └── docker-compose
+        ├── dev
+        └── prod
+
