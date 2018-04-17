@@ -21,4 +21,8 @@ RUN apk add --no-cache uwsgi-python3
 ADD /application /application
 ADD /docker/flaskapp/startup.sh /startup.sh
 
+# Verwendete Ports
+EXPOSE 8080
+EXPOSE 3031
+
 CMD ["/bin/sh", "/startup.sh"]

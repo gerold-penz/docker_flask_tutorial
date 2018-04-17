@@ -105,18 +105,6 @@ https://hub.docker.com/
 - ...
 
 
-------------------
-.dockerignore-File
-------------------
-
-Verhindert das Kopieren der hier aufgelisteten Ordner und Dateien.
-Beim Erstellen eines Docker-Images kopiert Docker alles im
-"Build-Context" (Standard: Ordner des Docker-Files) in einen temporären Ordner.
-Erst danach wird das Image erstellt.
-
-Siehe: https://docs.docker.com/engine/reference/commandline/build/#extended-description
-
-
 ====================================================
 Änderungen im Dateisystem eines laufenden Containers
 ====================================================
@@ -135,8 +123,27 @@ Löscht man den Container, werden auch diese Änderungen gelöscht.
 Das Bauen eines Docker-Images
 =============================
 
+FROM
+RUN
+ADD
+EXPOSE
+CMD
+
+------------------
+.dockerignore-File
+------------------
+
+Verhindert das Kopieren der hier aufgelisteten Ordner und Dateien.
+Beim Erstellen eines Docker-Images kopiert Docker alles aus dem
+"Build-Context" (Standard: Ordner des Docker-Files) in einen temporären Ordner.
+Erst danach wird das Image erstellt.
+
+Siehe: https://docs.docker.com/engine/reference/commandline/build/#extended-description
 
 
+================================================
+Mehrere Images mit Docker-Compose zusammenfassen
+================================================
 
 
 
