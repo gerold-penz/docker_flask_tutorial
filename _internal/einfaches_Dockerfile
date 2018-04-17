@@ -6,7 +6,6 @@ RUN apk add --no-cache py3-flask
 
 # Programmdateien kopieren
 ADD /application /application
-ADD /docker/flaskapp/startup.sh /startup.sh
 
 # Verwendete Ports
 EXPOSE 8080

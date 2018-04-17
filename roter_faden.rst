@@ -20,7 +20,7 @@ Gerold Penz 2018 <gerold@halvar.at>
 - Mit `docker run -it --rm` das Alpine-Linux starten und zeigen wie man
   etwas installiert
 
-- Docker-Container wurde gelöscht --> Zeige dass das installierte
+- Docker-Container wurde gelöscht --> zeige dass das installierte
   Programm wieder weg ist.
 
 - Einfaches Flask-Beispiel erstellen und ausprobieren
