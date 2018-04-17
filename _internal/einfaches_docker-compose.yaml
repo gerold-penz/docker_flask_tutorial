@@ -1,0 +1,23 @@
+version: "3.6"
+
+services:
+
+  flaskapp:
+
+    image: gerold/tutorial_flaskapp:dev
+
+    build:
+      context: ../../
+      dockerfile: docker/flaskapp/Dockerfile
+
+    depends_on:
+      - redis
+
+    environment:
+      PRODUCTION: "false"
+
+    volumes:
+      - ../../application:/application
+
+    ports:
+      - "8080:8080"

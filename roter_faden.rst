@@ -17,9 +17,13 @@ Gerold Penz 2018 <gerold@halvar.at>
 
 - Mit `docker pull` ein aktuelles "alpine:3.7" Image holen
 
-- Mit `docker run -it --rm` das Alpine-Linux starten und zeigen wie man etwas installiert
+- Mit `docker run -it --rm` das Alpine-Linux starten und zeigen wie man
+  etwas installiert
 
-- Docker-Container wurde gelöscht --> Zeige dass das installierte Programm wieder weg ist.
+- Docker-Container wurde gelöscht --> Zeige dass das installierte
+  Programm wieder weg ist.
+
+- Einfaches Flask-Beispiel erstellen und ausprobieren
 
 - Einfaches Dockerfile für Flaskapp erstellen
 
@@ -32,11 +36,11 @@ Gerold Penz 2018 <gerold@halvar.at>
     - Mit `docker run -it --rm gerold/tutorial_demo` den Container starten
       und zeigen dass Python installiert ist.
 
-- Einfaches Flask-Beispiel erstellen und ausprobieren
 
 - Dockerfile um die Installation von Flask erweitern
 
-...
+- Docker-Compose-File erstellen
+
 
 
 
