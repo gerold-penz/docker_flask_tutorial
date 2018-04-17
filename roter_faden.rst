@@ -52,62 +52,24 @@ Gerold Penz 2018 <gerold@halvar.at>
 
 - Dockerfile für Redis erstellen.
 
+- Dockerfile für die Flaskapp anpassen:
+  Redis installieren `RUN apk add --no-cache py3-redis`
+
 - Docker-Compose-Datei so anpassen, dass diese ein eigenes Redis-Image erstellt.
   Ausprobieren: `build --no-cache`
 
+- uWsgi im Dockerfile für die Flaskapp installieren
+  - `RUN apk add --no-cache uwsgi`
+  - `RUN apk add --no-cache uwsgi-python3`
 
+- Dockerfile für Nginx erstellen
 
+- Docker-Compose für Nginx anpassen und `environment` erklären.
 
+- Wenn noch Zeit dafür ist:
 
+    - Produktiv-Varianten erstellen
 
+    - `docker save` und `docker load` erklären
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ├── application
-    │   └── my_flask_app.py
-    ├── deploy
-    │   └── hetzner_testserver
-    │       ├── docker_flask_tutorial_dev
-    │       │   ├── docker-compose.yaml
-    │       │   └── _docker_save_images.py
-    │       └── docker_flask_tutorial_prod
-    │           ├── docker-compose.yaml
-    │           └── docker_tag_images.py
-    ├── docker
-    │   ├── flaskapp
-    │   │   ├── Dockerfile
-    │   │   ├── requirements.txt
-    │   │   └── startup.sh
-    │   ├── nginx
-    │   │   ├── Dockerfile
-    │   │   ├── nginx.conf
-    │   │   └── startup.sh
-    │   └── redis
-    │       └── Dockerfile
-    ├── docker-compose
-    │   ├── dev
-    │   │   └── docker-compose.yaml
-    │   └── prod
-    │       └── docker-compose.yaml
-    ├── README.rst
-    └── roter_faden.rst
-
+    - Anwendung auf den Produktiv-Server hochladen, einrichten und testen
