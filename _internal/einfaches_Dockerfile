@@ -10,4 +10,4 @@ ADD /application /application
 # Verwendete Ports
 EXPOSE 8080
 
-CMD ["/bin/sh", "/startup.sh"]
+CMD ["/usr/bin/python3", "/application/my_flask_app.py"]
